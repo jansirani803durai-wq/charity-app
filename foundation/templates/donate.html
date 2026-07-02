@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HopeHands Foundation - Donate</title>
+  <style>
+    *{box-sizing:border-box} a,button,.amount-btn,.submit,.donate-now{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+    html,body{margin:0;padding:0;width:100%;font-family:Inter,Arial,sans-serif;color:#111;background:#fff}
+    a{text-decoration:none;color:#111}
+    .navbar{height:64px;width:100%;display:flex;align-items:center;padding:0 42px;border-bottom:1px solid #e5e7eb;box-shadow:0 2px 5px rgba(0,0,0,.12);gap:24px;background:#fff;position:sticky;top:0;z-index:20}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:900;font-size:18px;margin-right:auto;white-space:nowrap}.brand span:first-child{font-size:14px}.nav{display:flex;align-items:center;gap:34px;font-size:27px;font-weight:500}.nav a.active{text-decoration:underline;text-underline-offset:5px}.donate-now{background:#1f3d8a;color:#fff!important;border-radius:7px;padding:8px 28px;font-size:27px;font-weight:900;box-shadow:0 2px 5px rgba(0,0,0,.25);white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;line-height:1.1}
+    .page{min-height:calc(100vh - 64px);display:flex;flex-direction:column}.donate-wrap{flex:1;padding:72px 36px 62px}.title{font-size:35px;line-height:1.15;margin:0 0 48px;font-weight:900}.intro{font-size:25px;line-height:1.22;margin:0 0 35px;max-width:1510px}.grid{display:grid;grid-template-columns:minmax(360px,760px) 1fr;gap:64px;align-items:end}.left{padding-left:22px}.section-title{font-size:29px;line-height:1.2;font-weight:900;margin:0 0 35px}.input{width:100%;height:62px;border:1px solid #d6d9df;border-radius:8px;background:#fff;box-shadow:0 5px 6px rgba(0,0,0,.22);font-size:19px;color:#111;padding:0 20px;margin-bottom:28px;outline:none}.input:focus,.select:focus{border-color:#1f3d8a;box-shadow:0 0 0 3px rgba(31,61,138,.16),0 5px 6px rgba(0,0,0,.22)}.amount-title{font-size:29px;font-weight:900;margin:57px 0 35px}.amounts{display:grid;grid-template-columns:92px 92px;gap:32px 12px;margin-left:20px;margin-bottom:34px}.amount-btn{height:48px;border:0;background:#f1f1f4;border-radius:9px;box-shadow:0 5px 6px rgba(0,0,0,.22);font-size:17px;font-weight:900;cursor:pointer}.amount-btn.selected{outline:3px solid #1f3d8a;background:#fff}.select,.custom-input{width:492px;max-width:100%;height:62px;border:1px solid #d6d9df;border-radius:8px;background:#fff;box-shadow:0 5px 6px rgba(0,0,0,.22);font-size:19px;color:#111;padding:0 20px;margin:0 0 24px;outline:none}.custom-input{display:none}.right{display:flex;flex-direction:column;align-items:center;padding:0 20px 42px}.submit{border:0;background:#1f3d8a;color:#fff;border-radius:8px;box-shadow:0 5px 6px rgba(0,0,0,.24);font-size:28px;font-weight:900;padding:15px 28px;cursor:pointer;margin-bottom:28px;display:inline-flex;align-items:center;justify-content:center;line-height:1.1}.safe{font-size:24px;color:#687386;line-height:1.3;text-align:center;margin:0}.field-error{color:#d21;font-size:14px;font-weight:800;margin:-18px 0 14px}.msg{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#1f3d8a;color:#fff;padding:12px 22px;border-radius:8px;z-index:50;font-weight:800;box-shadow:0 5px 16px #0003}.footer{background:#d9dce3;min-height:184px;padding:48px 60px 22px;color:#667386}.footer a{color:#667386}.foot-links{display:flex;justify-content:center;gap:185px;font-size:17px;margin-bottom:34px}.social{text-align:center;font-size:22px;letter-spacing:18px;margin-bottom:28px;color:#667386}.social a{color:#667386;text-decoration:none;display:inline-block;margin:0 8px;letter-spacing:0;cursor:pointer}.copy{text-align:center;font-size:18px;color:#667386}
+    @media(max-width:770px){.navbar{height:auto;min-height:62px;padding:12px 16px;gap:10px;flex-wrap:wrap}.brand{font-size:14px;width:100%;justify-content:flex-start}.nav{gap:18px;font-size:17px;flex-wrap:wrap}.donate-now{font-size:17px;padding:7px 16px}.donate-wrap{padding:44px 22px 45px}.title{font-size:32px;margin-bottom:30px}.intro{font-size:21px;margin-bottom:30px}.grid{grid-template-columns:1fr;gap:35px}.left{padding-left:0}.section-title,.amount-title{font-size:26px}.input{height:58px;font-size:18px}.amounts{margin-left:8px}.right{align-items:flex-start;padding:0}.submit{font-size:26px}.safe{text-align:left;font-size:21px}.foot-links{gap:32px;flex-wrap:wrap;font-size:15px}.footer{padding:38px 20px 22px}.copy{font-size:15px}}
+    @media(max-width:330px){.navbar{padding:10px}.brand{font-size:12px}.nav{gap:10px;font-size:13px}.donate-now{font-size:13px;padding:6px 10px}.donate-wrap{padding:32px 14px 34px}.title{font-size:26px;margin-bottom:24px}.intro{font-size:17px}.section-title,.amount-title{font-size:22px}.input,.select,.custom-input{height:50px;font-size:15px;padding:0 12px}.amounts{grid-template-columns:82px 82px;gap:18px 10px;margin-left:0}.amount-btn{height:44px;font-size:15px}.submit{font-size:20px;padding:13px 20px}.safe{font-size:17px}.foot-links{gap:20px;font-size:13px}.copy{font-size:13px}}
+  
+    @media(max-width:770px){html,body{overflow-x:hidden}.grid{grid-template-columns:1fr!important}.select,.custom-input{width:100%}.right{align-items:center!important}.submit{width:auto;min-height:54px}.nav a,.donate-now{line-height:1.2}.footer a{padding:8px;display:inline-block}}
+    @media(max-width:330px){html,body{overflow-x:hidden}.navbar{align-items:flex-start}.nav{width:100%;justify-content:flex-start}.donate-now{font-size:14px}.submit{width:100%;font-size:19px}.footer{min-height:160px}.foot-links{display:grid;grid-template-columns:1fr 1fr;text-align:center}.social a{margin:0 5px}}
+
+    .social{letter-spacing:0;display:flex;justify-content:center;gap:18px;align-items:center}.social a{width:28px;height:28px;border:1px solid #667386;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#667386!important}.social a:hover{background:#eef0f4}
+    @media(max-width:770px){.navbar{position:sticky}.nav{width:100%;justify-content:flex-start}.brand{margin-right:0}.donate-wrap{padding:34px 18px}.title{font-size:30px}.intro{font-size:18px}.grid{gap:20px}.input,.select,.custom-input{width:100%;height:54px}.amount-title{margin-top:28px}.right{padding-bottom:0}.submit{font-size:22px}.safe{font-size:18px}.foot-links{gap:22px}.social{gap:15px}}
+    @media(max-width:330px){.navbar{padding:9px 10px}.brand{font-size:11px}.nav{gap:8px}.nav a{font-size:12px}.donate-now{font-size:12px;padding:7px 9px}.donate-wrap{padding:24px 12px}.title{font-size:24px}.intro{font-size:15px}.section-title,.amount-title{font-size:20px}.input,.select,.custom-input{height:48px;font-size:14px}.amounts{grid-template-columns:1fr 1fr;width:100%;gap:14px 10px}.amount-btn{width:100%}.safe{font-size:15px;text-align:center}.footer{padding:28px 12px 18px}.foot-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social a{width:24px;height:24px;font-size:11px}}
+
+/* FINAL CURSOR / CLICK AREA FIX - do not change layout */
+.hot,.social-hot,.amount-hot,a,button,.m-btn,.m-social a,.m-foot-links a,.footer a,.nav a,.donate-now,.submit,.amount-btn{
+  cursor:pointer!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+.hot:hover,.social-hot:hover,.amount-hot:hover{
+  background:transparent!important;
+  outline:0!important;
+}
+.nav-home,.nav-about,.nav-causes,.nav-donate,.nav-contact,.nav-donatenow{z-index:160!important;}
+.footer1,.footer2,.footer3,.footer4,.footer5,.social-hot{z-index:170!important;}
+.overlay-form,.overlay-form input,.overlay-form select,.overlay-form button,.amount-hot{z-index:180!important;}
+.mobile-page,.m-nav,.m-footer,.m-social,.m-foot-links{position:relative;z-index:200!important;}
+.m-social a,.m-foot-links a{display:inline-flex!important;align-items:center!important;justify-content:center!important;}
+@media(max-width:770px){
+  .hot,.social-hot,.amount-hot{display:none!important;pointer-events:none!important;}
+  .mobile-page a,.mobile-page button,.m-card a,.m-footer a{cursor:pointer!important;}
+}
+
+</style>
+</head>
+<body>
+{% if messages %}{% for message in messages %}<div class="msg">{{ message }}</div>{% endfor %}{% endif %}
+<nav class="navbar">
+  <a class="brand" href="{% url 'home' %}"><span>▮</span><span>HopeHands Foundation</span></a>
+  <div class="nav">
+    <a href="{% url 'home' %}">Home</a><a href="{% url 'about' %}">About Us</a><a href="{% url 'causes' %}">Causes</a><a class="active" href="{% url 'donate' %}">Donate</a><a href="{% url 'contact' %}">Contact</a>
+  </div>
+  <a class="donate-now" href="{% url 'donate' %}">Donate Now</a>
+</nav>
+<main class="page">
+<section class="donate-wrap">
+  <h1 class="title">Make a Difference Today</h1>
+  <p class="intro">Your generous donation will help us continue our mission to support communities in need. Choose an amount below or enter a custom amount to make a secure donation.</p>
+  {% if form.errors %}<div class="msg">Please fill all fields correctly.</div>{% endif %}
+  <form method="post" id="donateForm" novalidate>
+    {% csrf_token %}
+    <div class="grid">
+      <div class="left">
+        <h2 class="section-title">Donor Information</h2>
+        <input class="input" name="name" placeholder="Name" required minlength="2" value="{{ form.name.value|default:'' }}">
+        {% if form.name.errors %}<div class="field-error">Enter your name.</div>{% endif %}
+        <input class="input" type="email" name="email" placeholder="Email" required value="{{ form.email.value|default:'' }}">
+        {% if form.email.errors %}<div class="field-error">Enter valid email.</div>{% endif %}
+        <input class="input" name="address" placeholder="Address" required value="{{ form.address.value|default:'' }}">
+        {% if form.address.errors %}<div class="field-error">Enter address.</div>{% endif %}
+        <h2 class="amount-title">Select Donation Amount</h2>
+        <input type="hidden" id="amount" name="amount" value="{{ form.amount.value|default:'500' }}">
+        <div class="amounts">
+          <button type="button" class="amount-btn selected" data-amount="500">₹500</button>
+          <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
+          <button type="button" class="amount-btn" data-amount="2000">₹2000</button>
+          <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+        </div>
+        <input id="customAmount" class="custom-input" type="number" name="custom_amount" min="1" placeholder="Custom Amount" value="{{ form.custom_amount.value|default:'' }}">
+        <select class="select" name="cause" required>
+          <option value="">Select a Cause</option>
+          <option value="Healthcare For Children" {% if form.cause.value == 'Healthcare For Children' %}selected{% endif %}>Healthcare For Children</option>
+          <option value="Education For All" {% if form.cause.value == 'Education For All' %}selected{% endif %}>Education For All</option>
+          <option value="Poverty Relief" {% if form.cause.value == 'Poverty Relief' %}selected{% endif %}>Poverty Relief</option>
+          <option value="Environmental Sustainability" {% if form.cause.value == 'Environmental Sustainability' %}selected{% endif %}>Environmental Sustainability</option>
+        </select>
+        {% if form.cause.errors %}<div class="field-error">Select a cause.</div>{% endif %}
+      </div>
+      <div class="right">
+        <button class="submit" type="submit">Donate Securely</button>
+        <p class="safe">Your donation is safe with us. We use secure payment processing.</p>
+      </div>
+    </div>
+  </form>
+</section>
+<footer class="footer">
+  <div class="foot-links"><a href="{% url 'about' %}">About Us</a><a href="{% url 'contact' %}">Contact</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  <div class="social"><a href="https://facebook.com" target="_blank" aria-label="Facebook">f</a><a href="https://twitter.com" target="_blank" aria-label="Twitter">𝕏</a><a href="https://instagram.com" target="_blank" aria-label="Instagram">◎</a><a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">in</a></div>
+  <div class="copy">© 2024 HopeHands Foundation. All rights reserved.</div>
+</footer>
+</main>
+<script>
+const amount=document.getElementById('amount'), custom=document.getElementById('customAmount');
+function syncAmount(v){document.querySelectorAll('.amount-btn').forEach(x=>x.classList.toggle('selected',x.dataset.amount===v));amount.value=v;custom.style.display=v==='custom'?'block':'none';custom.required=v==='custom';}
+document.querySelectorAll('.amount-btn').forEach(b=>b.addEventListener('click',()=>syncAmount(b.dataset.amount)));
+syncAmount(amount.value || '500');
+document.getElementById('donateForm').addEventListener('submit',e=>{const f=e.currentTarget;if(!f.checkValidity()){e.preventDefault();f.reportValidity();}});
+</script>
+
+<script>
+// Final pointer fix: keep clicks on the exact visible link/button only.
+document.querySelectorAll('a,button,.amount-btn,.submit,.donate-now').forEach(el=>{
+  el.style.cursor='pointer';
+});
+</script>
+</body>
+</html>

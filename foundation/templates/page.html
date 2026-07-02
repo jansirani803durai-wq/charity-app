@@ -1,0 +1,220 @@
+{% load static %}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HopeHands Foundation</title>
+<style>
+*{box-sizing:border-box} html,body{margin:0;width:100%;min-height:100%;font-family:Inter,Arial,sans-serif;background:#fff;color:#111}.screen{position:relative;width:100%;overflow:hidden}.shot{display:block;width:100%;height:auto}.hot{position:absolute;display:block;z-index:60;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.hot:hover{background:transparent!important}.msg{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:#1f3d8a;color:#fff;padding:12px 22px;border-radius:8px;z-index:50;font-weight:800;box-shadow:0 5px 16px #0003}.nav-home{left:40.3%;top:.35%;width:6.8%;height:2.1%}.nav-about{left:47.4%;top:.35%;width:9%;height:2.1%}.nav-causes{left:56.9%;top:.35%;width:8%;height:2.1%}.nav-donate{left:65.6%;top:.35%;width:8%;height:2.1%}.nav-contact{left:74.3%;top:.35%;width:8.6%;height:2.1%}.nav-donatenow{left:83.4%;top:.24%;width:14.4%;height:2.35%}
+.home-donate{left:31.2%;top:19.7%;width:17%;height:4.5%}.home-volunteer{left:44.7%;top:19.7%;width:23.2%;height:4.5%}.home-donate2{left:33%;top:60.7%;width:15.5%;height:3.8%}.home-learn{left:47%;top:60.7%;width:18.5%;height:3.8%}.vol-join{left:42%;top:19.6%;width:17.8%;height:3%}
+.cause-btn1{left:70.5%;top:22%;width:25.8%;height:4.8%}.cause-btn2{left:71.5%;top:44.8%;width:25.8%;height:4.8%}.cause-btn3{left:70.5%;top:67.5%;width:25.8%;height:4.8%}.cause-btn4{left:70.5%;top:90%;width:25.8%;height:4.8%}
+.thanks-donate{left:34%;top:73.3%;width:15.5%;height:3%}.thanks-share{left:49.5%;top:73.3%;width:16.8%;height:3%}.thanks-email{left:6%;top:80.8%;width:82%;height:3.6%}.thanks-volunteer{left:43.5%;top:84.8%;width:17%;height:3%}
+.footer1{left:3%;bottom:6.3%;width:11%;height:1.6%}.footer2{left:22.5%;bottom:6.3%;width:13%;height:1.6%}.footer3{left:44.5%;bottom:6.3%;width:11%;height:1.6%}.footer4{left:67.5%;bottom:6.3%;width:9%;height:1.6%}.footer5{left:90%;bottom:6.3%;width:8.5%;height:1.6%}
+.overlay-form{position:absolute;z-index:10;pointer-events:none}.overlay-form input,.overlay-form select{position:absolute;pointer-events:auto;border:0;background:transparent;font:700 18px Inter,Arial,sans-serif;color:#111;outline:2px solid transparent;padding:0 18px;border-radius:8px;box-shadow:none}.overlay-form input:focus,.overlay-form select:focus{outline:3px solid #1f3d8a}.overlay-form select:invalid{color:transparent}.overlay-form input::placeholder{color:transparent}.overlay-form button{position:absolute;pointer-events:auto;border:0;background:transparent!important;color:transparent!important;opacity:0!important;border-radius:8px;font:800 28px Inter,Arial,sans-serif;cursor:pointer}.overlay-form .err{position:absolute;background:#fff;color:#d21;font-size:14px;font-weight:800;padding:4px 8px;border-radius:4px}.donate-form{left:0;top:0;width:100%;height:100%}.donate-form .name{left:4.5%;top:29.3%;width:52%;height:4.2%}.donate-form .email{left:4.5%;top:36%;width:52%;height:4.2%}.donate-form .address{left:4.5%;top:42.6%;width:52%;height:4.2%}.donate-form .amount{opacity:0;pointer-events:none}.donate-form .cause{left:4.7%;top:70.2%;width:31.5%;height:4.2%}.donate-form .custom{left:4.7%;top:63.2%;width:31.5%;height:4.2%;display:none}.donate-form button{left:61%;top:70.8%;width:17%;height:4.2%}.amount-hot{position:absolute;z-index:70;border:0;background:transparent;cursor:pointer}.a500{left:6%;top:59%;width:6%;height:3%}.a1000{left:13%;top:59%;width:7%;height:3%}.a2000{left:6%;top:65%;width:6%;height:3%}.acustom{left:13%;top:65%;width:7%;height:3%}.selected-amount{outline:3px solid #1f3d8a;border-radius:10px;background:rgba(31,61,138,.04)}
+.vol-form{left:0;top:0;width:100%;height:100%}.vol-form input,.vol-form select{font-size:16px;appearance:none;-webkit-appearance:none;background:transparent;box-shadow:none}.vol-form .full_name{left:2%;top:71.15%;width:82.5%;height:2.1%}.vol-form .vemail{left:2%;top:74.15%;width:82.5%;height:2.1%}.vol-form .phone{left:2%;top:77.15%;width:82.5%;height:2.1%}.vol-form .interest{left:2%;top:80.25%;width:82.5%;height:2.2%}.vol-form .availability{left:2%;top:83.35%;width:82.5%;height:2.2%}.vol-form button{left:38%;top:86.75%;width:19.5%;height:2.3%;font-size:20px}.vol-form input[type=hidden]{display:none!important}.fake-select{position:absolute;pointer-events:auto;z-index:2000!important;cursor:pointer;background:transparent;border:0;border-radius:8px;font:700 16px Inter,Arial,sans-serif;color:#111}.fake-select .fake-main{width:100%;height:100%;display:flex;align-items:center;padding:0 18px;line-height:1;white-space:nowrap}.fake-select .fake-main.placeholder{color:#111;font-weight:500}.fake-select .fake-options{display:none;position:absolute;left:0;top:calc(100% + 6px);width:100%;max-height:152px;overflow:auto;background:#fff;border:1px solid #d6d9df;border-radius:6px;box-shadow:0 4px 12px #0003;z-index:99999}.fake-select.open .fake-options{display:block}.fake-select .fake-option{padding:10px 16px;background:#fff;color:#111;font:600 15px Inter,Arial,sans-serif;line-height:1.1}.fake-select .fake-option:hover,.fake-select .fake-option.active{background:#1f3d8a;color:#fff}.fake-select.interest{left:2%;top:80.55%;width:82.5%;height:1.72%}.fake-select.availability{left:2%;top:83.65%;width:82.5%;height:1.72%}
+.social-hot{position:absolute;bottom:4.2%;height:1.6%;width:2%;z-index:65;cursor:pointer}.social1{left:44.6%}.social2{left:47.8%}.social3{left:51%}.social4{left:54.2%}
+@media(max-width:770px){.screen{width:100%;max-width:100vw}.shot{width:100%;max-width:100%;height:auto}.hot{min-height:18px}.nav-home,.nav-about,.nav-causes,.nav-donate,.nav-contact,.nav-donatenow{height:28px;top:4px}.footer1,.footer2,.footer3,.footer4,.footer5{height:20px}.social-hot{height:20px;width:26px}.overlay-form input,.overlay-form select{font-size:12px;padding:0 8px}.overlay-form button{font-size:18px}.msg{top:50px;width:90%;font-size:13px}.donate-form button{font-size:14px}.vol-form input,.vol-form select{font-size:9px;padding:0 6px}.vol-form button{font-size:12px}}
+@media(max-width:330px){.hot{min-height:14px}.nav-home,.nav-about,.nav-causes,.nav-donate,.nav-contact,.nav-donatenow{height:20px;top:2px}.footer1,.footer2,.footer3,.footer4,.footer5{height:16px}.social-hot{height:16px;width:20px}.overlay-form input,.overlay-form select{font-size:8px;padding:0 5px}.overlay-form button{font-size:11px}.donate-form button{font-size:9px}.vol-form button{font-size:8px}.msg{font-size:11px}}
+
+/* Perfect cursor/click alignment fix: no visible offset boxes, click only on actual link/button layers */
+.shot{pointer-events:none!important;user-select:none}
+.hot,.social-hot,.amount-hot,.overlay-form button,.m-btn,.m-links a,.m-foot-links a,.m-social a,button,a{cursor:pointer!important}
+.hot,.social-hot,.amount-hot{background:transparent!important;border:0!important;outline:0!important}
+.hot:hover,.social-hot:hover,.amount-hot:hover{background:transparent!important;box-shadow:none!important}
+.screen a,.screen button,.overlay-form input,.overlay-form select{position:absolute;z-index:999!important}
+.overlay-form{z-index:500!important}
+.overlay-form input,.overlay-form select{z-index:1000!important}
+.overlay-form button{z-index:1001!important}
+.page-causes .cause-btn1,.page-causes .cause-btn2,.page-causes .cause-btn3,.page-causes .cause-btn4{height:3.2%!important}
+.page-home .home-donate,.page-home .home-volunteer,.page-home .home-donate2,.page-home .home-learn{height:3.2%!important}
+.page-thanks .thanks-donate,.page-thanks .thanks-share,.page-thanks .thanks-email,.page-thanks .thanks-volunteer{height:2.2%!important}
+.footer1,.footer2,.footer3,.footer4,.footer5{height:1.2%!important;background:transparent!important}
+.social-hot{background:transparent!important}
+
+/* Mobile/tablet real responsive layout */
+.mobile-page{display:none}
+.mobile-page a,.mobile-page button{cursor:pointer!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent;position:relative;z-index:20}
+@media(max-width:770px){
+  body{overflow-x:hidden}.screen{overflow:visible}.shot,.screen>.hot,.screen>.social-hot,.screen>.overlay-form,.amount-hot{display:none!important}
+  .mobile-page{display:block;width:100%;font-family:Inter,Arial,sans-serif;color:#111;background:#fff;line-height:1.35}
+  .m-nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid #e5e7eb;box-shadow:0 2px 5px #0002;position:sticky;top:0;background:#fff;z-index:99}
+  .m-brand{font-weight:900;font-size:14px;margin-right:auto;color:#111;text-decoration:none;white-space:nowrap}.m-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.m-links a{font-size:16px;color:#111;text-decoration:none;padding:6px 0}.m-donate{background:#1f3d8a!important;color:#fff!important;border-radius:7px;padding:8px 14px!important;font-weight:900;box-shadow:0 2px 5px #0003;line-height:1}
+  .m-section{padding:28px 18px}.m-hero{min-height:260px;background:#edf2f7;border-radius:6px;margin:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;background-size:cover;background-position:center center;background-repeat:no-repeat;overflow:hidden}.m-hero h1{font-size:30px;color:#fff;text-shadow:0 2px 8px #0009;margin:0 0 8px}.m-hero p{font-size:16px;color:#fff;text-shadow:0 2px 8px #0009;margin:0 0 18px}.m-btn{display:inline-flex;align-items:center;justify-content:center;background:#1f3d8a;color:#fff;text-decoration:none;border-radius:7px;padding:10px 18px;font-weight:900;box-shadow:0 3px 6px #0003;border:0;line-height:1.1}.m-btn.light{background:#f2f3f5;color:#111}.m-center{text-align:center}.m-title{font-size:26px;margin:0 0 12px;font-weight:900}.m-text{font-size:16px;color:#222;margin:0 0 18px}.m-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.m-card{border:1px solid #ddd;border-radius:8px;box-shadow:0 2px 5px #0002;background:#fff;overflow:hidden;padding:14px}.m-card img{width:100%;border-radius:6px;display:block;margin-bottom:10px}.m-card h3{font-size:18px;margin:0 0 8px}.m-card p{font-size:14px;color:#687386;margin:0 0 12px}.m-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.m-impact .m-card{font-size:15px}.m-impact b{display:block;font-size:22px;color:#111}.m-footer{background:#d9dce3;padding:32px 18px 20px;text-align:center;color:#667386}.m-foot-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:22px}.m-foot-links a{color:#667386;text-decoration:none;font-size:15px;padding:6px}.m-social{display:flex;justify-content:center;gap:18px;margin:10px 0 20px}.m-social a{width:26px;height:26px;border:1px solid #667386;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#667386;text-decoration:none;font-weight:900;font-size:13px}.m-copy{font-size:14px;color:#667386}.m-form input,.m-form select{width:100%;height:52px;border:1px solid #d6d9df;border-radius:8px;background:#f1f2f5;box-shadow:0 3px 5px #0003;margin:0 0 14px;padding:0 14px;font-size:16px}.m-form button{margin:14px auto;display:flex;font-size:20px}.m-help{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.m-help .m-card{font-weight:900;color:#1f3d8a;min-height:72px;display:flex;align-items:center}.m-contact{display:grid;grid-template-columns:1fr;gap:12px}.m-contact .m-card{font-weight:900;font-size:16px}.m-map{width:100%;border-radius:6px;margin:18px 0}.m-values,.m-team{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.m-team .m-card{text-align:center}.m-team img{border-radius:50%;width:90px;height:90px;object-fit:cover;margin:0 auto 8px}.m-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.m-thanks-img{width:100%;border-radius:8px;box-shadow:0 2px 6px #0003;margin-bottom:22px}
+}
+@media(max-width:330px){
+ .m-nav{padding:10px}.m-brand{font-size:11px;width:100%}.m-links{gap:9px}.m-links a{font-size:12px}.m-donate{font-size:12px;padding:7px 10px!important}.m-section{padding:22px 12px}.m-hero{margin:12px;min-height:220px;padding:18px}.m-hero h1{font-size:24px}.m-hero p{font-size:13px}.m-title{font-size:22px}.m-text{font-size:14px}.m-grid,.m-help,.m-values,.m-team,.m-impact{grid-template-columns:1fr}.m-card h3{font-size:16px}.m-card p{font-size:13px}.m-btn{width:100%;margin:4px 0}.m-foot-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.m-social a{width:24px;height:24px;font-size:11px}.m-form input,.m-form select{height:48px;font-size:14px}.m-form button{font-size:18px;width:100%}
+}
+
+/* FINAL CURSOR / CLICK AREA FIX - do not change layout */
+.hot,.social-hot,.amount-hot,a,button,.m-btn,.m-social a,.m-foot-links a,.footer a,.nav a,.donate-now,.submit,.amount-btn{
+  cursor:pointer!important;
+  touch-action:manipulation!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+.hot:hover,.social-hot:hover,.amount-hot:hover{
+  background:transparent!important;
+  outline:0!important;
+}
+.nav-home,.nav-about,.nav-causes,.nav-donate,.nav-contact,.nav-donatenow{z-index:160!important;}
+.footer1,.footer2,.footer3,.footer4,.footer5,.social-hot{z-index:170!important;}
+.overlay-form,.overlay-form input,.overlay-form select,.overlay-form button,.amount-hot{z-index:180!important;}
+.mobile-page,.m-nav,.m-footer,.m-social,.m-foot-links{position:relative;z-index:200!important;}
+.m-social a,.m-foot-links a{display:inline-flex!important;align-items:center!important;justify-content:center!important;}
+@media(max-width:770px){
+  .hot,.social-hot,.amount-hot{display:none!important;pointer-events:none!important;}
+  .mobile-page a,.mobile-page button,.m-card a,.m-footer a{cursor:pointer!important;}
+}
+
+
+/* FINAL cursor/focus perfect fix - removes browser offset boxes and keeps click zones on exact visible controls */
+.hot,.social-hot,.amount-hot,.overlay-form button{cursor:pointer!important;outline:none!important;box-shadow:none!important}
+.overlay-form input,.overlay-form select{outline:none!important;box-shadow:none!important;border:0!important;cursor:text!important}
+.overlay-form select{cursor:pointer!important;appearance:none!important;-webkit-appearance:none!important;-moz-appearance:none!important}
+.overlay-form input:focus,.overlay-form select:focus,.overlay-form button:focus,.hot:focus,.social-hot:focus,.amount-hot:focus{outline:none!important;box-shadow:none!important}
+.vol-form .interest{top:80.55%!important;height:1.72%!important}
+.vol-form .availability{top:83.65%!important;height:1.72%!important}
+.vol-form button{top:86.85%!important;height:2.05%!important;cursor:pointer!important}
+.donate-form .cause{top:70.55%!important;height:3.25%!important}
+.donate-form button{top:70.95%!important;height:3.25%!important;cursor:pointer!important}
+.page-causes .cause-btn1,.page-causes .cause-btn2,.page-causes .cause-btn3,.page-causes .cause-btn4{height:2.7%!important;cursor:pointer!important}
+.footer1,.footer2,.footer3,.footer4,.footer5{height:1.0%!important;cursor:pointer!important}
+.social-hot{height:1.0%!important;cursor:pointer!important}
+@media(max-width:770px){
+  .m-btn,.m-links a,.m-foot-links a,.m-social a,.m-card a{cursor:pointer!important;position:relative!important;z-index:50!important;pointer-events:auto!important}
+  .m-form input,.m-form select,.m-form button{cursor:pointer!important;outline:none!important}
+  .m-form input{cursor:text!important}
+  .m-form input:focus,.m-form select:focus,.m-form button:focus{outline:2px solid #1f3d8a!important;outline-offset:0!important}
+}
+
+/* Volunteer desktop dropdown final clean fix: cover screenshot text and show only one label/value */
+@media(min-width:771px){
+  .page-volunteer .fake-select{
+    background:#f1f2f5!important;
+    box-shadow:0 4px 7px rgba(0,0,0,.28)!important;
+    border-radius:8px!important;
+    display:flex!important;
+    align-items:center!important;
+    overflow:visible!important;
+  }
+  .page-volunteer .fake-select.interest{left:2%!important;top:80.25%!important;width:82.5%!important;height:2.2%!important;}
+  .page-volunteer .fake-select.availability{left:2%!important;top:83.35%!important;width:82.5%!important;height:2.2%!important;}
+  .page-volunteer .fake-select .fake-main{
+    height:100%!important;
+    width:100%!important;
+    display:flex!important;
+    align-items:center!important;
+    padding:0 54px 0 20px!important;
+    font-size:18px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    color:#111!important;
+    transform:none!important;
+  }
+  .page-volunteer .fake-select .fake-main.placeholder{color:#111!important;font-weight:500!important;}
+  .page-volunteer .fake-select::after{
+    content:'⌄';
+    position:absolute;
+    right:28px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#68758d;
+    font-size:30px;
+    font-weight:800;
+    line-height:1;
+    pointer-events:none;
+  }
+  .page-volunteer .fake-select.open::after{content:'⌃';}
+  .page-volunteer .fake-select .fake-options{
+    top:calc(100% + 3px)!important;
+    max-height:180px!important;
+    background:#fff!important;
+    overflow:auto!important;
+    z-index:999999!important;
+  }
+  .page-volunteer .fake-select .fake-option{font-size:16px!important;padding:10px 18px!important;}
+}
+
+
+/* FINAL FIX: hide duplicate volunteer dropdown screenshot text completely */
+@media(min-width:771px){
+  .page-volunteer .fake-select.interest,
+  .page-volunteer .fake-select.availability{
+    background:#f1f2f5!important;
+    height:2.85%!important;
+    z-index:999999!important;
+    overflow:hidden!important;
+    box-shadow:0 4px 7px rgba(0,0,0,.28)!important;
+  }
+  .page-volunteer .fake-select.interest{top:80.05%!important;}
+  .page-volunteer .fake-select.availability{top:83.15%!important;}
+  .page-volunteer .fake-select .fake-main{
+    align-items:center!important;
+    padding:0 60px 0 22px!important;
+    height:100%!important;
+    line-height:1!important;
+    font-size:16px!important;
+  }
+  .page-volunteer .fake-select .fake-options{
+    top:100%!important;
+    overflow:auto!important;
+    max-height:190px!important;
+  }
+}
+
+/* REAL FINAL VOLUNTEER FIX: keep original screenshot labels only, use invisible native selects for functionality */
+.page-volunteer .fake-select{display:none!important;pointer-events:none!important;visibility:hidden!important;}
+.page-volunteer .vol-form select.native-select{
+  opacity:0!important;
+  color:transparent!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+  cursor:pointer!important;
+  appearance:auto!important;
+  -webkit-appearance:auto!important;
+  z-index:3000!important;
+}
+.page-volunteer .vol-form select.native-select option{color:#111!important;background:#fff!important;}
+.page-volunteer .vol-form .interest{left:2%!important;top:80.25%!important;width:82.5%!important;height:2.2%!important;}
+.page-volunteer .vol-form .availability{left:2%!important;top:83.35%!important;width:82.5%!important;height:2.2%!important;}
+.page-volunteer .vol-form button{cursor:pointer!important;z-index:3001!important;}
+
+</style></head><body>
+{% if messages %}{% for message in messages %}<div class="msg">{{ message }}</div>{% endfor %}{% endif %}{% if form.errors %}<div class="msg">Please fill all fields correctly.</div>{% endif %}
+<div class="screen page-{{ page }}">
+<img class="shot" src="{% static 'images/' %}{{ img }}" alt="{{ page }}">
+<a class="hot nav-home" href="{% url 'home' %}"></a><a class="hot nav-about" href="{% url 'about' %}"></a><a class="hot nav-causes" href="{% url 'causes' %}"></a><a class="hot nav-donate" href="{% url 'donate' %}"></a><a class="hot nav-contact" href="{% url 'contact' %}"></a><a class="hot nav-donatenow" href="{% url 'donate' %}"></a>
+{% if page == 'home' %}<a class="hot home-donate" href="{% url 'donate' %}"></a><a class="hot home-volunteer" href="{% url 'volunteer' %}"></a><a class="hot home-donate2" href="{% url 'donate' %}"></a><a class="hot home-learn" href="{% url 'causes' %}"></a>{% endif %}
+{% if page == 'volunteer' %}<a class="hot vol-join" href="#volunteer-form"></a>{% endif %}
+{% if page == 'causes' %}<a class="hot cause-btn1" href="{% url 'donate_cause' 'healthcare-for-children' %}"></a><a class="hot cause-btn2" href="{% url 'donate_cause' 'education-for-all' %}"></a><a class="hot cause-btn3" href="{% url 'donate_cause' 'poverty-relief' %}"></a><a class="hot cause-btn4" href="{% url 'donate_cause' 'environmental-sustainability' %}"></a>{% endif %}
+{% if page == 'thanks' %}<a class="hot thanks-donate" href="{% url 'donate' %}"></a><a class="hot thanks-share" href="mailto:?subject=Support HopeHands Foundation&body=Please support HopeHands Foundation"></a><a class="hot thanks-email" href="{% url 'contact' %}"></a><a class="hot thanks-volunteer" href="{% url 'volunteer' %}"></a>{% endif %}
+{% if page == 'donate' %}<form method="post" class="overlay-form donate-form">{% csrf_token %}
+<input class="name" name="name" placeholder="Name" autocomplete="name" required minlength="2" value="{{ form.name.value|default:'' }}"><input class="email" type="email" name="email" placeholder="Email" autocomplete="email" required value="{{ form.email.value|default:'' }}"><input class="address" name="address" required value="{{ form.address.value|default:'' }}">
+<input id="amount" name="amount" class="amount" required value="{{ form.amount.value|default:'500' }}"><input id="customAmount" class="custom" type="number" name="custom_amount" min="1" placeholder="Custom Amount"><select class="cause" name="cause" required><option value="">Select a Cause</option><option {% if form.cause.value == 'Healthcare For Children' %}selected{% endif %}>Healthcare For Children</option><option {% if form.cause.value == 'Education For All' %}selected{% endif %}>Education For All</option><option {% if form.cause.value == 'Poverty Relief' %}selected{% endif %}>Poverty Relief</option><option {% if form.cause.value == 'Environmental Sustainability' %}selected{% endif %}>Environmental Sustainability</option></select><button>Donate Securely</button></form><button type="button" class="amount-hot a500 selected-amount" data-amount="500"></button><button type="button" class="amount-hot a1000" data-amount="1000"></button><button type="button" class="amount-hot a2000" data-amount="2000"></button><button type="button" class="amount-hot acustom" data-amount="custom"></button>{% endif %}
+{% if page == 'volunteer' %}<form method="post" class="overlay-form vol-form" id="volunteer-form">{% csrf_token %}<input class="full_name" name="full_name" placeholder="Full Name" autocomplete="name" required minlength="2" value="{{ form.full_name.value|default:'' }}"><input class="vemail" type="email" name="email" placeholder="Email Address" autocomplete="email" required value="{{ form.email.value|default:'' }}"><input class="phone" name="phone" placeholder="Phone Number" autocomplete="tel" pattern="[0-9]{10}" maxlength="10" required value="{{ form.phone.value|default:'' }}"><select class="interest native-select" name="interest" required aria-label="Area of Interest"><option value="" selected disabled>Area of Interest</option><option value="Education Support" {% if form.interest.value == 'Education Support' %}selected{% endif %}>Education Support</option><option value="Medical Assistance" {% if form.interest.value == 'Medical Assistance' %}selected{% endif %}>Medical Assistance</option><option value="Food Distribution" {% if form.interest.value == 'Food Distribution' %}selected{% endif %}>Food Distribution</option><option value="Event Coordination" {% if form.interest.value == 'Event Coordination' %}selected{% endif %}>Event Coordination</option><option value="Online / Remote Volunteering" {% if form.interest.value == 'Online / Remote Volunteering' %}selected{% endif %}>Online / Remote Volunteering</option></select><select class="availability native-select" name="availability" required aria-label="Availability"><option value="" selected disabled>Availability</option><option value="Weekdays" {% if form.availability.value == 'Weekdays' %}selected{% endif %}>Weekdays</option><option value="Weekends" {% if form.availability.value == 'Weekends' %}selected{% endif %}>Weekends</option><option value="Evening" {% if form.availability.value == 'Evening' %}selected{% endif %}>Evening</option><option value="Flexible" {% if form.availability.value == 'Flexible' %}selected{% endif %}>Flexible</option></select><button type="submit">Become a Volunteer</button></form>{% endif %}
+<a class="hot footer1" href="{% url 'about' %}" aria-label="About Us"></a><a class="hot footer2" href="{% url 'causes' %}" aria-label="Our Programs"></a><a class="hot footer3" href="{% url 'volunteer' %}" aria-label="Volunteer"></a><a class="hot footer4" href="{% url 'donate' %}" aria-label="Donate"></a><a class="hot footer5" href="{% url 'contact' %}" aria-label="Contact"></a>
+<a class="social-hot social1" href="https://facebook.com" target="_blank" aria-label="Facebook"></a><a class="social-hot social2" href="https://twitter.com" target="_blank" aria-label="Twitter"></a><a class="social-hot social3" href="https://instagram.com" target="_blank" aria-label="Instagram"></a><a class="social-hot social4" href="https://linkedin.com" target="_blank" aria-label="LinkedIn"></a>
+
+<div class="mobile-page">
+  <nav class="m-nav">
+    <a class="m-brand" href="{% url 'home' %}">▮ HopeHands Foundation</a>
+    <div class="m-links"><a href="{% url 'home' %}">Home</a><a href="{% url 'about' %}">About Us</a><a href="{% url 'causes' %}">Causes</a><a href="{% url 'donate' %}">Donate</a><a href="{% url 'contact' %}">Contact</a><a class="m-donate" href="{% url 'donate' %}">Donate Now</a></div>
+  </nav>
+  {% if page == 'home' %}
+  <section class="m-hero" style="background-image:linear-gradient(#0007,#0007),url('{% static 'images/home_hero.png' %}')"><div><h1>Together, We Can Change Lives</h1><p>Your kindness today can bring hope, health, and happiness to someone in need.</p><div class="m-actions"><a class="m-btn" href="{% url 'donate' %}">Donate Now</a><a class="m-btn light" href="{% url 'volunteer' %}">Become a Volunteer</a></div></div></section>
+  <section class="m-section m-center"><h2 class="m-title">Our Mission</h2><p class="m-text">At HopeHands Foundation, our mission is to empower communities and transform lives through compassionate action and sustainable solutions.</p></section>
+  <section class="m-section"><h2 class="m-title m-center">Our Causes</h2><div class="m-grid"><div class="m-card"><h3>Education for Children</h3><p>Providing quality education and resources to underprivileged children.</p></div><div class="m-card"><h3>Medical Support</h3><p>Offering medical assistance and healthcare support to those in need.</p></div><div class="m-card"><h3>Food & Shelter</h3><p>Providing food, shelter, and basic necessities.</p></div><div class="m-card"><h3>Disaster Relief</h3><p>Responding swiftly to natural disasters.</p></div></div><div class="m-actions" style="margin-top:18px"><a class="m-btn" href="{% url 'donate' %}">Donate</a><a class="m-btn light" href="{% url 'causes' %}">Learn More</a></div></section>
+  <section class="m-section"><h2 class="m-title m-center">Impact Section</h2><div class="m-impact"><div class="m-card">Lives Helped<b>10,000+</b></div><div class="m-card">Volunteers<b>500+</b></div><div class="m-card">Projects Completed<b>120+</b></div></div></section>
+  {% elif page == 'about' %}
+  <section class="m-section m-center"><h1 class="m-title">About Us</h1><h2>Our Story</h2><p class="m-text">HopeHands Foundation was established in 2010 to create a world where every person has access to basic necessities and opportunities for a better life.</p><img class="m-map" src="{% static 'images/about.png' %}" alt="About"></section><section class="m-section m-center"><h2>Vision & Mission</h2><p class="m-text">We empower communities, ensure access to essential resources, and foster sustainable development.</p><h2>Our Values</h2><div class="m-values"><div class="m-card"><h3>Compassion</h3><p>Empathy and dignity.</p></div><div class="m-card"><h3>Collaboration</h3><p>Partnerships for lasting change.</p></div><div class="m-card"><h3>Integrity</h3><p>Honesty and ethical conduct.</p></div></div></section>
+  {% elif page == 'causes' %}
+  <section class="m-section"><h1 class="m-title">Our Causes</h1><p class="m-text">Explore the initiatives and projects we are dedicated to supporting.</p><div class="m-grid"><div class="m-card"><h3>Healthcare for Children</h3><p>Providing comprehensive medical support.</p><a class="m-btn" href="{% url 'donate_cause' 'healthcare-for-children' %}">Donate for this cause</a></div><div class="m-card"><h3>Education for All</h3><p>Quality education and resources for children.</p><a class="m-btn" href="{% url 'donate_cause' 'education-for-all' %}">Donate for this cause</a></div><div class="m-card"><h3>Poverty Relief</h3><p>Meals, clean water, and safe shelter.</p><a class="m-btn" href="{% url 'donate_cause' 'poverty-relief' %}">Donate for this cause</a></div><div class="m-card"><h3>Environmental Sustainability</h3><p>Protecting our planet for future generations.</p><a class="m-btn" href="{% url 'donate_cause' 'environmental-sustainability' %}">Donate for this cause</a></div></div></section>
+  {% elif page == 'contact' %}
+  <section class="m-section m-center"><h1 class="m-title">Get in Touch With Us</h1><div class="m-contact"><div class="m-card">✉ support@hopehands.org</div><div class="m-card">☏ +91 98765 43210</div><div class="m-card">⌖ Chennai, India</div></div><img class="m-map" src="{% static 'images/contact.png' %}" alt="Chennai map"><h2>Support & Trust</h2><p class="m-text">We believe in transparency, trust, and people-powered change.</p></section>
+  {% elif page == 'volunteer' %}
+  <section class="m-hero" style="background-image:linear-gradient(#0007,#0007),url('{% static 'images/volunteer_hero.png' %}')"><div><h1>Be the Change. Become a Volunteer.</h1><p>Your time, skills, and compassion can bring real change.</p><a class="m-btn" href="#m-vol-form">Join as a Volunteer</a></div></section><section class="m-section"><h2 class="m-title">Volunteer Program Introduction</h2><p class="m-text">Volunteers are the heart of everything we do.</p><img class="m-map" src="{% static 'images/volunteer_team.png' %}" alt="Volunteers"><h2>Ways You Can Help</h2><div class="m-help"><div class="m-card">🎓 Education Support</div><div class="m-card">🩺 Medical Assistance</div><div class="m-card">🚚 Food Distribution</div><div class="m-card">📅 Event Coordination</div><div class="m-card">🌐 Online / Remote Volunteering</div></div><h2 id="m-vol-form">Join Our Volunteer Community</h2><form method="post" class="m-form">{% csrf_token %}<input name="full_name" placeholder="Full Name" required minlength="2"><input name="email" type="email" placeholder="Email Address" required><input name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required><select name="interest" required><option value="">Area of Interest</option><option>Education Support</option><option>Medical Assistance</option><option>Food Distribution</option><option>Event Coordination</option><option>Online / Remote Volunteering</option></select><select name="availability" required><option value="">Availability</option><option>Weekdays</option><option>Weekends</option><option>Evening</option><option>Flexible</option></select><button class="m-btn" type="submit">Become a Volunteer</button></form><p class="m-text m-center">We respect your time and privacy. Our team will contact you soon.</p></section>
+  {% elif page == 'thanks' %}
+  <section class="m-section m-center"><img class="m-thanks-img" src="{% static 'images/thanks.png' %}" alt="Thank you"><h1 class="m-title">Thank You for Making a Difference ❤️</h1><p class="m-text">Your kindness has brought hope, care, and support to those who need it the most.</p><div class="m-actions"><a class="m-btn" href="{% url 'donate' %}">Donate Again</a><a class="m-btn light" href="mailto:?subject=Support HopeHands Foundation&body=Please support HopeHands Foundation">Share This Cause</a><a class="m-btn" href="{% url 'volunteer' %}">Become a Volunteer</a></div></section>
+  {% endif %}
+  <footer class="m-footer"><div class="m-foot-links"><a href="{% url 'about' %}">About Us</a><a href="{% url 'causes' %}">Our Programs</a><a href="{% url 'volunteer' %}">Volunteer</a><a href="{% url 'donate' %}">Donate</a><a href="{% url 'contact' %}">Contact</a></div><div class="m-social"><a href="https://facebook.com" target="_blank">f</a><a href="https://twitter.com" target="_blank">𝕏</a><a href="https://instagram.com" target="_blank">◎</a><a href="https://linkedin.com" target="_blank">in</a></div><div class="m-copy">© 2024 HopeHands Foundation. All rights reserved.</div></footer>
+</div>
+</div>
+<script>document.querySelectorAll(".vol-join").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();document.getElementById("volunteer-form")?.scrollIntoView({behavior:"smooth",block:"center"});}));document.querySelectorAll('.amount-hot').forEach(b=>b.onclick=()=>{document.querySelectorAll('.amount-hot').forEach(x=>x.classList.remove('selected-amount'));b.classList.add('selected-amount');let a=b.dataset.amount;document.getElementById('amount').value=a;let c=document.getElementById('customAmount');if(c){c.style.display=a==='custom'?'block':'none';c.required=a==='custom';}});document.querySelectorAll('.overlay-form select').forEach(s=>{const u=()=>s.style.color=s.value?'#111':'transparent';u();s.addEventListener('change',u);});document.querySelectorAll('.fake-select').forEach(fs=>{const main=fs.querySelector('.fake-main'),hid=document.getElementById(fs.dataset.target),ph=fs.dataset.placeholder;function paint(){main.textContent=hid.value||ph;main.classList.toggle('placeholder',!hid.value)}paint();fs.addEventListener('click',e=>{e.stopPropagation();document.querySelectorAll('.fake-select.open').forEach(o=>{if(o!==fs)o.classList.remove('open')});fs.classList.toggle('open')});fs.querySelectorAll('.fake-option').forEach(op=>op.addEventListener('click',e=>{e.stopPropagation();hid.value=op.dataset.value;paint();fs.classList.remove('open')}));});document.addEventListener('click',()=>document.querySelectorAll('.fake-select.open').forEach(o=>o.classList.remove('open')));const vf=document.getElementById('volunteer-form');if(vf){vf.addEventListener('submit',e=>{if(!vf.checkValidity()){e.preventDefault();vf.reportValidity();}});}</script>
+</body></html>
